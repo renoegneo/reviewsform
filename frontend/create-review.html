@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave a Review - Aksai Travel</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Хедер -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div>
+                    <h1>Aksai Travel</h1>
+                    <p>discover a new world</p>
+                </div>
+            </div>
+            <a href="index.html" class="btn btn-secondary">Back to Dashboard</a>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <section class="form-section">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">
+                Share Your Experience
+            </h2>
+
+            <!-- Уведомления -->
+            <div id="notification" class="notification"></div>
+
+            <!-- Форма -->
+            <div class="form-card">
+                <form id="reviewForm">
+                    <!-- Заголовок: Level of satisfaction -->
+                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">
+                        Level of Satisfaction
+                    </h3>
+
+                    <!-- Vehicle -->
+                    <div class="form-group">
+                        <label>Vehicle: <span style="color: red;">*</span></label>
+                        <div class="rating-group">
+                            <div class="rating-option">
+                                <input type="radio" id="vehicle-4" name="vehicle" value="4" required>
+                                <label for="vehicle-4">High</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="vehicle-3" name="vehicle" value="3">
+                                <label for="vehicle-3">Good</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="vehicle-2" name="vehicle" value="2">
+                                <label for="vehicle-2">Average</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="vehicle-1" name="vehicle" value="1">
+                                <label for="vehicle-1">Low</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Driver -->
+                    <div class="form-group">
+                        <label>Driver: <span style="color: red;">*</span></label>
+                        <div class="rating-group">
+                            <div class="rating-option">
+                                <input type="radio" id="driver-4" name="driver" value="4" required>
+                                <label for="driver-4">High</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="driver-3" name="driver" value="3">
+                                <label for="driver-3">Good</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="driver-2" name="driver" value="2">
+                                <label for="driver-2">Average</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="driver-1" name="driver" value="1">
+                                <label for="driver-1">Low</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Guide -->
+                    <div class="form-group">
+                        <label>Guide: <span style="color: red;">*</span></label>
+                        <div class="rating-group">
+                            <div class="rating-option">
+                                <input type="radio" id="guide-4" name="guide" value="4" required>
+                                <label for="guide-4">High</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="guide-3" name="guide" value="3">
+                                <label for="guide-3">Good</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="guide-2" name="guide" value="2">
+                                <label for="guide-2">Average</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="guide-1" name="guide" value="1">
+                                <label for="guide-1">Low</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accommodation -->
+                    <div class="form-group">
+                        <label>Accommodation: <span style="color: red;">*</span></label>
+                        <div class="rating-group">
+                            <div class="rating-option">
+                                <input type="radio" id="accommodation-4" name="accommodation" value="4" required>
+                                <label for="accommodation-4">High</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="accommodation-3" name="accommodation" value="3">
+                                <label for="accommodation-3">Good</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="accommodation-2" name="accommodation" value="2">
+                                <label for="accommodation-2">Average</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="accommodation-1" name="accommodation" value="1">
+                                <label for="accommodation-1">Low</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Meals -->
+                    <div class="form-group">
+                        <label>Meals: <span style="color: red;">*</span></label>
+                        <div class="rating-group">
+                            <div class="rating-option">
+                                <input type="radio" id="meals-4" name="meals" value="4" required>
+                                <label for="meals-4">High</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="meals-3" name="meals" value="3">
+                                <label for="meals-3">Good</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="meals-2" name="meals" value="2">
+                                <label for="meals-2">Average</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="meals-1" name="meals" value="1">
+                                <label for="meals-1">Low</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr style="margin: 2rem 0; border: none; border-top: 2px solid var(--border-color);">
+
+                    <!-- Дополнительная информация -->
+                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">
+                        Additional Information
+                    </h3>
+
+                    <!-- Name -->
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" class="form-input" placeholder="Enter your name (optional)">
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Your Email:</label>
+                        <input type="email" id="email" class="form-input" placeholder="Enter your email (optional)">
+                    </div>
+
+                    <!-- Tour ID -->
+                    <div class="form-group">
+                        <label for="tour_id">Tour ID:</label>
+                        <input type="text" id="tour_id" class="form-input" placeholder="Enter tour ID if applicable">
+                    </div>
+
+                    <!-- Comment -->
+                    <div class="form-group">
+                        <label for="comment">Please share any additional comments:</label>
+                        <textarea id="comment" class="form-textarea" 
+                            placeholder="Tell us about your experience..."></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">
+                        Submit Review
+                    </button>
+                </form>
+
+                <p style="text-align: center; margin-top: 2rem; color: var(--text-secondary);">
+                    Thank you very much for filling up this form and hope to meet you again as our guest in the future!
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-logo">
+            <div>
+                <h3>Aksai Travel</h3>
+                <p>discover a new world</p>
+            </div>
+        </div>
+        <p>&copy; 2025 Aksai Travel. All rights reserved.</p>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/create-review.js"></script>
+</body>
+</html>

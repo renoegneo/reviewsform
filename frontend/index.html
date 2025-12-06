@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews Dashboard - Aksai Travel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Хедер -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div>
+                    <h1>Aksai Travel</h1>
+                    <p>discover a new world</p>
+                </div>
+            </div>
+            <a href="create-review.html" class="btn btn-primary">Leave a Review</a>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <!-- Статистика -->
+        <section class="stats-section">
+            <h2>Overall Statistics</h2>
+            <div id="statsGrid" class="stats-grid">
+                <!-- Карточки статистики загрузятся динамически -->
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading statistics...</p>
+                </div>
+            </div>
+
+            <!-- График распределения оценок -->
+            <div class="chart-container">
+                <h3>Ratings Distribution</h3>
+                <canvas id="ratingsChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Список отзывов -->
+        <section class="reviews-section">
+            <h2>Recent Reviews</h2>
+            <div id="reviewsList" class="reviews-grid">
+                <!-- Отзывы загрузятся динамически -->
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading reviews...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-logo">
+            <div>
+                <h3>Aksai Travel</h3>
+                <p>discover a new world</p>
+            </div>
+        </div>
+        <p>&copy; 2025 Aksai Travel. All rights reserved.</p>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
