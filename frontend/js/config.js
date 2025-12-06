@@ -5,7 +5,7 @@
  * Для продакшена: просто замени на URL твоего хостинга
  */
 
-const API_URL = 'https://reviewsform-production.up.railway.app/';
+const API_URL = 'https://reviewsform-production.up.railway.app';
 
 // Эндпоинты API
 const API_ENDPOINTS = {
