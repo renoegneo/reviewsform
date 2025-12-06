@@ -4,7 +4,6 @@ WORKDIR /app
 
 # Копируем backend в контейнер
 COPY backend/ /app
-COPY .env /app/.env
 
 
 RUN pip install --no-cache-dir -r requirements.txt
