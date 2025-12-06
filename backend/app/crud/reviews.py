@@ -69,35 +69,60 @@ def list_reviews(
 
 
 def get_stats(db: Session) -> Dict:
+    """
+    Возвращает статистику для dashboard:
+    - Общее количество отзывов
+    - Средние оценки по всем категориям
+    - Распределение оценок (для графиков)
+    """
 
+    # Общее количество
     total = db.query(func.count(Review.id)).scalar() or 0
 
+    # Средние значения
     avg_vehicle = db.query(func.avg(Review.vehicle)).scalar() or 0
     avg_driver = db.query(func.avg(Review.driver)).scalar() or 0
     avg_guide = db.query(func.avg(Review.guide)).scalar() or 0
     avg_accom = db.query(func.avg(Review.accommodation)).scalar() or 0
     avg_meals = db.query(func.avg(Review.meals)).scalar() or 0
     avg_overall = db.query(func.avg(Review.overall_score)).scalar() or 0
-    dist_vehicle = {
-        str(k): int(v)
-        for k, v in (
-            db.query(Review.vehicle, func.count(Review.vehicle))
-            .group_by(Review.vehicle)
+
+    # Распределение оценок для ВСЕХ категорий (для графиков)
+    def get_distribution(column):
+        """Helper функция для подсчёта распределения"""
+        result = (
+            db.query(column, func.count(column))
+            .group_by(column)
             .all()
         )
-    }
+        # Превращаем в словарь {оценка: количество}
+        # Заполняем все оценки 1-4, даже если их нет (для красивых графиков)
+        dist = {1: 0, 2: 0, 3: 0, 4: 0}
+        for rating, count in result:
+            dist[rating] = int(count)
+        return dist
+
+    dist_vehicle = get_distribution(Review.vehicle)
+    dist_driver = get_distribution(Review.driver)
+    dist_guide = get_distribution(Review.guide)
+    dist_accommodation = get_distribution(Review.accommodation)
+    dist_meals = get_distribution(Review.meals)
 
     return {
         "total": total,
         "averages": {
-            "vehicle": float(avg_vehicle),
-            "driver": float(avg_driver),
-            "guide": float(avg_guide),
-            "accommodation": float(avg_accom),
-            "meals": float(avg_meals),
-            "overall": float(avg_overall),
+            "vehicle": round(float(avg_vehicle), 2),
+            "driver": round(float(avg_driver), 2),
+            "guide": round(float(avg_guide), 2),
+            "accommodation": round(float(avg_accom), 2),
+            "meals": round(float(avg_meals), 2),
+            "overall": round(float(avg_overall), 2),
         },
         "distribution": {
-            "vehicle": dist_vehicle
+            "vehicle": dist_vehicle,
+            "driver": dist_driver,
+            "guide": dist_guide,
+            "accommodation": dist_accommodation,
+            "meals": dist_meals,
         },
     }
