@@ -1,6 +1,3 @@
-[build]
-builder = "python"
-
 [deploy]
-start = "uvicorn app.main:app --host 0.0.0.0 --port ${PORT}"
 path = "backend"
+start = "uvicorn app.main:app --host 0.0.0.0 --port ${PORT}"
