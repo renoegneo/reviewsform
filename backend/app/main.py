@@ -6,7 +6,7 @@ from app.db import engine, Base
 app = FastAPI(title="Reviews API")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # В проде замени на конкретный домен
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
