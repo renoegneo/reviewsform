@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Optional
+from typing import Optional, Dict
 
 from pydantic import BaseModel, Field, EmailStr
 
@@ -28,14 +28,15 @@ class ReviewOut(ReviewCreate):
 
 
 class ReviewStats(BaseModel):
-    avg_vehicle: float
-    avg_driver: float
-    avg_guide: float
-    avg_accommodation: float
-    avg_meals: float
-    avg_overall: float
-
-    total_reviews: int
+    """
+    Статистика для dashboard:
+    - total: общее количество отзывов
+    - averages: средние оценки по категориям
+    - distribution: распределение оценок {1: count, 2: count, 3: count, 4: count}
+    """
+    total: int
+    averages: Dict[str, float]  # {"vehicle": 3.5, "driver": 3.8, ...}
+    distribution: Dict[str, Dict[int, int]]  # {"vehicle": {1: 5, 2: 10, ...}, ...}
 
 
 class ReviewsWithStats(BaseModel):
