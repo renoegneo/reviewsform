@@ -7,7 +7,7 @@ app = FastAPI(title="Reviews API")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://reviewsform-git-main-renoegneos-projects-63bc2665.vercel.app/",  
+        "https://reviewsform-e4uh9wzm0-renoegneos-projects-63bc2665.vercel.app/",  
         "http://localhost:8080"  # для локальной разработки
     ],
     allow_credentials=True,
