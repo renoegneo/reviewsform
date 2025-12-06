@@ -8,7 +8,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://reviewsform-e4uh9wzm0-renoegneos-projects-63bc2665.vercel.app",  
-        "http://localhost:8080"  # для локальной разработки
+        "http://localhost:8080",
+        "https://reviewsform.vercel.app/" # для локальной разработки
     ],
     allow_credentials=True,
     allow_methods=["*"],
