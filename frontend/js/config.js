@@ -5,7 +5,7 @@
  * Для продакшена: просто замени на URL твоего хостинга
  */
 
-const API_URL = 'http://127.0.0.1:8000';
+const API_URL = 'https://reviewsform-git-main-renoegneos-projects-63bc2665.vercel.app/';
 
 // Эндпоинты API
 const API_ENDPOINTS = {

@@ -6,7 +6,10 @@ from app.db import engine, Base
 app = FastAPI(title="Reviews API")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://reviewsform-git-main-renoegneos-projects-63bc2665.vercel.app/",  
+        "http://localhost:8080"  # для локальной разработки
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
